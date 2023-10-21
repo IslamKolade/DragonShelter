@@ -2,9 +2,9 @@ from django.contrib import admin
 from core.models import DragonShelterProfile, AnimalResident, BookAnEncounterRequest, DragonShelterEvent
 
 # Register your models here.
-admin.site.site_header = 'Dragon Shelter Admin'
-admin.site.site_title = 'Dragon Shelter Admin Panel'
-admin.site.index_title = 'Welcome to Dragon Shelter Admin'
+admin.site.site_header = 'The Dragon Shelter Admin'
+admin.site.site_title = 'The Dragon Shelter Admin Panel'
+admin.site.index_title = 'Welcome to The Dragon Shelter Admin'
 
 class BookAnEncounterRequestFilter(admin.ModelAdmin): 
     search_fields = ('name',)
