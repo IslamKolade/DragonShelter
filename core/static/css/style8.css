@@ -568,49 +568,100 @@ h6,
 /*** Events End ***/
 
 
-/*** Blog Start ***/
-.blog .blog-item .blog-img::after {
+/*** Header ***/
+.header-carousel{
+    display: inline-block;
+}
+
+.header-carousel::before,
+.header-carousel::after {
     position: absolute;
     content: "";
     width: 100%;
-    height: 0;
+    height: 10px;
     top: 0;
     left: 0;
-    bottom: auto;
-    background: rgba(77, 101, 249, .7);
-    border-radius: 10px 10px 0 0;
-    transition: 0.5s;
+    background: url(../img/bg-header-top.png) center center repeat-x;
+    z-index: 1;
 }
 
-.blog .blog-item:hover .blog-img::after {
-    height: 100%;
-    opacity: 1;
+.header-carousel::after {
+    height: 19px;
+    top: auto;
+    bottom: 0;
+    background: url(../img/bg-header-bottom.png) center center repeat-x;
 }
 
-.blog .blog-item .blog-date-comments {
-    padding-top: 150px !important; 
-    margin-top: -125px;
+.header-carousel .owl-carousel-item {
+    position: relative;
+    height: 500px;
 }
 
-.blog .blog-item .blog-img img,
-.blog .blog-item .blog-content img,
-.blog .blog-item .blog-text-inner a.h4 {
-    transition: 0.5s;
+.header-carousel .owl-carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
-.blog .blog-item:hover .blog-img img {
-    transform: scale(1.3);
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        height: 400px;
+    }
+
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
 }
 
-.blog .blog-item:hover .blog-content img {
-    transform: scale(1.3);
+.header-carousel .owl-carousel-item p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
 }
 
-.blog .blog-item:hover .blog-text-inner a.h4 {
-    color: var(--bs-primary);
+.header-carousel .owl-carousel-item h1 {
+    font-size: 30px;
+    font-weight: 600;
 }
-/*** Blog End ***/
 
+.header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    margin: 7px 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
+}
 
 
 /*** Team Start ***/
