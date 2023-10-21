@@ -188,94 +188,25 @@
                     <h4 class="text-primary mb-4 border-bottom border-secondary border-2 d-inline-block p-2 title-border-radius">What We Do</h4>
                     <h1 class="text-primary mb-5 display-3">Bringing Hope, Compassion, and Education to Life</h1>
                 </div>
+                
                 <!-- Carousel Start -->
-                <div class="container-fluid p-0 mb-5">
-                <div class="owl-carousel header-carousel position-relative">
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{% static "img/carpet_cleaning.jpg" %}" alt="">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                            <div class="container">
-                                <div class="row justify-content-start">
-                                    <div class="col-10 col-lg-8">
-                                        <h1 class="display-2 text-white animated slideInDown mb-4">Carpet Cleaning</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">Reviving Carpets, One Clean at a Time</p>
-                                        <a href="#contact_us" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Schedule Cleaning</a>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="container-fluid testimonial py-5">
+                    <div class="container py-1">
+                        <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.3s">
+                            <a href="{% static "img/our_services-1.jpg" %}" data-fancybox="services-gallery">
+                                <img src="{% static "img/our_services-1.jpg" %}" alt="" class="testimonial-item img-border-radius bg-light border border-secondary p-1" style="height:400px; weight: 400px;">
+                            </a>
+                            <a href="{% static "img/our_services-2.jpg" %}" data-fancybox="services-gallery">
+                                <img src="{% static "img/our_services-2.jpg" %}" alt="" class="testimonial-item img-border-radius bg-light border border-secondary p-1" style="height:400px; weight: 400px;">
+                            </a>
+                            <a href="{% static "img/our_services-3.jpg" %}" data-fancybox="services-gallery">
+                                <img src="{% static "img/our_services-3.jpg" %}" alt="" class="testimonial-item img-border-radius bg-light border border-secondary p-1" style="height:400px; weight: 400px;">
+                            </a>
+                            <a href="{% static "img/our_services-4.jpg" %}" data-fancybox="services-gallery">
+                                <img src="{% static "img/our_services-4.jpg" %}" alt="" class="testimonial-item img-border-radius bg-light border border-secondary p-1" style="height:400px; weight: 400px;">
+                            </a>
                         </div>
                     </div>
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{% static "img/plumbing.webp" %}" alt="">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                            <div class="container">
-                                <div class="row justify-content-start">
-                                    <div class="col-10 col-lg-8">
-                                        <h1 class="display-2 text-white animated slideInDown mb-4">Plumbing</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">Expert Plumbing Solutions</p>
-                                        <a href="#contact_us" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Book Plumbing Services</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{% static "img/painting.webp" %}" alt="">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                            <div class="container">
-                                <div class="row justify-content-start">
-                                    <div class="col-10 col-lg-8">
-                                        <h1 class="display-2 text-white animated slideInDown mb-4">Painting</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">Transforming Spaces with Colors</p>
-                                        <a href="#contact_us" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Request a Paint Job</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{% static "img/ac_repair.webp" %}" alt="">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                            <div class="container">
-                                <div class="row justify-content-start">
-                                    <div class="col-10 col-lg-8">
-                                        <h1 class="display-2 text-white animated slideInDown mb-4">AC Installation & Repair</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">Cool Comfort, Always Reliable</p>
-                                        <a href="#contact_us" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Get AC Solutions</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{% static "img/tv_mounting.jpg" %}" alt="">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                            <div class="container">
-                                <div class="row justify-content-start">
-                                    <div class="col-10 col-lg-8">
-                                        <h1 class="display-2 text-white animated slideInDown mb-4">TV Mounting</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">Elevate Your Entertainment</p>
-                                        <a href="#contact_us" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Mount My TV</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{% static "img/lawn_care.webp" %}" alt="">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                            <div class="container">
-                                <div class="row justify-content-start">
-                                    <div class="col-10 col-lg-8">
-                                        <h1 class="display-2 text-white animated slideInDown mb-4">Lawn Care</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">Lush Lawns, Greener Tomorrows</p>
-                                        <a href="#contact_us" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Transform My Lawn</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
                 <!-- Carousel End -->
                 <br>
@@ -535,7 +466,7 @@
 
         <!-- Testimonial Start -->
         <div class="container-fluid testimonial py-5">
-            <div class="container py-5">
+            <div class="container py-1">
                 <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
                     <h4 class="text-primary mb-4 border-bottom border-secondary border-2 d-inline-block p-2 title-border-radius">Our Testimonials</h4>
                     <h1 class="mb-5 display-3 text-primary">What People Say About Us</h1>
