@@ -8,7 +8,7 @@ import cloudinary
 
 # Create your models here.
 def index(request):
-    animal_residents = AnimalResident.objects.all()[:3]
+    animal_residents = AnimalResident.objects.all()[-3:]
     dragon_shelter = get_object_or_404(DragonShelterProfile, pk=1)
     return render(request, 'index.html', {'animal_residents': animal_residents, 'dragon_shelter':dragon_shelter})
 
