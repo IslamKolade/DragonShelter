@@ -108,7 +108,7 @@ def book_an_encounter_paddy_pony(request):
             })
 
             # Send the email
-            msg = EmailMessage(email_subject, email_body, to=[email, 'anna@thedragonshelter.com', 'rachelbooksthedragonshelter@gmail.com'])
+            msg = EmailMessage(email_subject, email_body, to=[email, 'anna@thedragonshelter.com'])
             msg.content_subtype = 'html'
             msg.send()
 

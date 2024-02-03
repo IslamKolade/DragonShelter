@@ -37,13 +37,13 @@ DEBUG = False
 ALLOWED_HOSTS = ['www.thedragonshelter.com', '.vercel.app', 'localhost', '127.0.0.1']
 
 # SMTP Configuration.
-DEFAULT_FROM_EMAIL = 'rachelbooksthedragonshelter@gmail.com'
-SERVER_EMAIL = 'rachelbooksthedragonshelter@gmail.com'
+DEFAULT_FROM_EMAIL = 'anna.thedragonshelter@gmail.com'
+SERVER_EMAIL = 'anna.thedragonshelter@gmail.com'
 # EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rachelbooksthedragonshelter@gmail.com'
-EMAIL_HOST_PASSWORD = 'inqvckdwotkfzkfv'
+EMAIL_HOST_USER = 'anna.thedragonshelter@gmail.com'
+EMAIL_HOST_PASSWORD = 'ttvmkmwxuhemtyux'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 
@@ -108,9 +108,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "railway",
         "USER": "postgres",
-        "PASSWORD": "p2Qb8ebUcazlsKM7D5U4",
-        "HOST": "containers-us-west-74.railway.app",
-        "PORT": "6968"
+        "PASSWORD": "aGb32Ed6Gg2Fe5cfc26Eddee2Fa5CfdF",
+        "HOST": "viaduct.proxy.rlwy.net",
+        "PORT": "50595"
     }
 }
 
