@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)@ni1+)!22#gz8pntxsxjdb1eewv=(2jv2%ba0ik6vs!q@lk(+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.thedragonshelter.com', '.vercel.app', 'localhost', '127.0.0.1']
 
