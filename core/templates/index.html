@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="google-site-verification" content="T7hRvjPt5iw8OueTs_Tsf_P23--AemNKh9S4gZMcajg" />
-        <meta name="description" content="{{dragon_shelter.about}}">
+        <meta name="description" content="{{dragon_shelter.about|safe}}">
         <meta name="keywords" content="The Dragon Shelter, Dragon Shelter, The Dragon Shelter Couldson London England UK, The Dragon Shelter London, Reptile school program Couldson London England UK, School Animal Encounters Couldson London England UK, Wildlife Rehabilitation, Exotic Pet Adoption Couldson London England UK, Wildlife Education for Kids Couldson London England UK, Animal Rescue Center Couldson London England UK, Child-Friendly Animal Rescues Couldson London England UK, Kids Learning About Animals, Environmental Education, School Field Trips in Couldson London England UK, Reptile Kids Party Couldson London England UK, Reptile rehabilitation in Couldson London England UK, Educational Animal Visits in Couldson London England UK, Reptile birthday party for kids in Couldson London England UK, Reptile school program for kids in Couldson London England UK, Reptile encounter for kids in Couldson London England UK, Reptile encounter for families in Couldson London England UK, Reptile encounter for groups in Couldson London England UK, Reptile education in Couldson London England UK, Reptile sanctuary in Couldson London England UK, Reptile center in Couldson London England UK, Reptile rescue in Couldson London England UK, Reptile conservation in Couldson London England UK, Couldson Reptile Shelter, Brixton Reptile Shelter, Reptile fun in Couldson London England UK, Reptile for kids, Reptile birthday party, Reptile field trip, Couldson London England UK Children Encounters, Couldson London England UK Children Encounter, Kids activities, Kids classes for Animal Reptiles, Playgroups Animal Reptile Visit, School Excursion for Reptiles">
 
         <meta name="author" content="Dev Dynamics">
@@ -13,7 +13,7 @@
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
         
         <meta property="og:title" content="The Dragon Shelter">
-        <meta property="og:description" content="{{dragon_shelter.about}}">
+        <meta property="og:description" content="{{dragon_shelter.about|safe}}">
         <meta property="og:image" content="https://www.thedragonshelter.com/static/img/pink-logo.png">
         <meta property="og:url" content="https://www.thedragonshelter.com/">
         <meta property="og:type" content="website">
@@ -175,7 +175,7 @@
                         <h4 class="text-primary mb-4 border-bottom border-secondary border-2 d-inline-block p-2 title-border-radius">About Us</h4>
                         <h1 class="text-primary mb-4 display-5">Nurturing Life, Embracing Hope</h1>
                         <p class="text-dark mb-4">
-                            {{ dragon_shelter.about|truncatechars:300 }}
+                            {{ dragon_shelter.about|truncatechars:300|safe }}
                         </p>
                         <div class="row mb-4">
                             <div class="col-lg-6">
@@ -304,7 +304,7 @@
                                 <div class="events-text p-4 border border-primary bg-white border-top-0 rounded-bottom">
                                     <a class="h4 text-primary">{{animal.name}}</a>
                                     <p class="text-primary">Species: {{animal.species}}</p>
-                                    <p class="mb-0 mt-3">{{ animal.story|truncatechars:100 }}</p>
+                                    <p class="mb-0 mt-3">{{ animal.story|truncatechars:100|safe }}</p>
                                     <br>
                                     <div class="text-center">
                                         <a href="{% url 'animal_profile' animal.slug animal.id %}" onclick="showPreloader(event)" class="btn btn-secondary border-3 border-primary text-white px-4 py-2 mb-3 btn-border-radius">Read Full Story</a>

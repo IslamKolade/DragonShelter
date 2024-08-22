@@ -1,11 +1,10 @@
 from django.db import models
-import cloudinary
 from django.utils.text import slugify
-from cloudinary.models import CloudinaryField
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
           
           
 # Create your models here.
-
 class DragonShelterProfile(models.Model):
     facebook_url = models.URLField(max_length=10000, null=True, blank=True)
     instagram_username = models.CharField(max_length=10000, null=True, blank=True)
@@ -15,7 +14,7 @@ class DragonShelterProfile(models.Model):
     booking_enquiries_email = models.CharField(max_length=10000, null=True, blank=True)
     phone_number = models.CharField(max_length=10000, null=True, blank=True)
     whatsapp_number = models.CharField(max_length=10000, null=True, blank=True)
-    about = models.TextField(null=True, blank=True)
+    about = RichTextUploadingField()
     short_description = models.TextField(null=True, blank=True)
 
     def __str__(self):
@@ -26,7 +25,7 @@ class AnimalResident(models.Model):
     slug = models.SlugField(max_length=10000, blank=True, editable=False)
     age = models.CharField(max_length=10000, null=True, blank=True)
     species = models.CharField(max_length=10000, null=True, blank=True)
-    story = models.TextField(null=True, blank=True)
+    story = RichTextUploadingField()
     CHOICES = (
         ('All ages', 'All ages'),
         ('7+ ages', '7+ ages'),
@@ -38,7 +37,7 @@ class AnimalResident(models.Model):
         default='All ages',
         null=True, blank=True,
     )
-    animal_picture = CloudinaryField('animal picture')
+    animal_picture =  models.ImageField(upload_to='animal_residents/')
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -69,7 +68,7 @@ class PaddyPony(models.Model):
     name = models.CharField(max_length=10000, null=True, blank=True)
     age = models.CharField(max_length=10000, null=True, blank=True)
     species = models.CharField(max_length=10000, null=True, blank=True)
-    story = models.TextField(null=True, blank=True)
+    story = RichTextUploadingField()
     CHOICES = (
         ('All ages', 'All ages'),
         ('7+ ages', '7+ ages'),
@@ -81,12 +80,7 @@ class PaddyPony(models.Model):
         default='All ages',
         null=True, blank=True,
     )
-    pony_profile_picture = CloudinaryField('pony profile picture')
-    photo_1 = CloudinaryField('photo 1', blank=True, null=True,)
-    photo_2 = CloudinaryField('photo 2', blank=True, null=True,)
-    photo_3 = CloudinaryField('photo 3', blank=True, null=True,)
-    photo_4 = CloudinaryField('photo 4', blank=True, null=True,)
-
+    pony_profile_picture = models.ImageField(upload_to='animal_residents/paddy_pony')
 
 
     def save(self, *args, **kwargs):

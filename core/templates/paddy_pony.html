@@ -48,7 +48,7 @@
                     <div class="events-text p-4 border border-primary bg-white border-top-0 rounded-bottom">
                         <a class="h4 text-primary">{{paddy_pony.name}}</a>
                         <p class="text-primary">Species: {{paddy_pony.species}}</p>
-                        <p class="mb-0 mt-3">{{ paddy_pony.story }}</p>
+                        <p class="mb-0 mt-3">{{ paddy_pony.story|safe }}</p>
                     </div>
                     <br>
                 </div>

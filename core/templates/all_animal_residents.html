@@ -46,7 +46,7 @@
                             <div class="events-text p-4 border border-primary bg-white border-top-0 rounded-bottom">
                                 <a class="h4 text-primary">{{animal.name}}</a>
                                 <p class="text-primary">Species: {{animal.species}}</p>
-                                <p class="mb-0 mt-3">{{ animal.story|truncatechars:100 }}</p>
+                                <p class="mb-0 mt-3">{{ animal.story|truncatechars:100|safe }}</p>
                                 <br>
                                 <div class="text-center">
                                     <a href="{% url 'animal_profile' animal.slug animal.id %}" onclick="showPreloader(event)" class="btn btn-secondary border-3 border-primary text-white px-4 py-2 mb-3 btn-border-radius">Read Full Story</a>

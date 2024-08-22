@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, JsonResponse
 from django.template.loader import render_to_string
 from .models import AnimalResident, DragonShelterProfile, BookAnEncounterRequest, DragonShelterEvent, PaddyPony
-import cloudinary
 import os
 from django.conf import settings
 
