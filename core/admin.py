@@ -12,7 +12,7 @@ class BookAnEncounterRequestFilter(admin.ModelAdmin):
 
 class AnimalResidentFilter(admin.ModelAdmin): 
     search_fields = ('name',)
-    list_filter = ('event_suitability','species','age')
+    #list_filter = ('event_suitability','species','age')
 
 admin.site.register(DragonShelterProfile)
 admin.site.register(AnimalResident, AnimalResidentFilter)
