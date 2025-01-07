@@ -774,6 +774,8 @@
             $("#bookAnEncounterForm").submit(function (e) {
                 e.preventDefault();
                 $(".preloader-overlay").show();
+                
+                var response = grecaptcha.getResponse();
 
                 if (!response) {
                     alert("Please complete the reCAPTCHA challenge.");
