@@ -11,7 +11,7 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['www.thedragonshelter.com', 'dragonshelter.onrender.com',  'localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://www.thedragonshelter.com/']
+CSRF_TRUSTED_ORIGINS = ['https://www.thedragonshelter.com/, https://www.dragonshelter.onrender.com/']
 
 #XSS Security
 SECURE_BROWSER_XSS_FILTER = True
