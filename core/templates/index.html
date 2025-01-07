@@ -39,6 +39,7 @@
         <!--JQuery-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
 
         <!-- Customized Bootstrap Stylesheet -->
         <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
@@ -342,6 +343,9 @@
                 <textarea class="w-100 form-control mb-5 border-primary" rows="8" name="event_description" cols="10" placeholder="Event Description" required></textarea>
                 <label for="preferred_date_of_event">Preferred Date of Event: </label><br><br>
                 <input type="date" name="preferred_date_of_event" id="preferred_date_of_event" class="w-100 form-control py-3 mb-5 border-primary" required>
+                <!-- Google reCAPTCHA widget -->
+                <div class="g-recaptcha" data-sitekey="6Lf2oWEpAAAAAFBuaOy0vtobn6f4l8n0yUVDyAoI"></div>
+                <br>
                 <button class="w-100 btn py-3 text-white btn-secondary border-3 border-primary" type="submit">Submit</button>
             </form>
             <br>
@@ -728,6 +732,14 @@
                 e.preventDefault();
                 $(".preloader-overlay").show();
 
+                var response = grecaptcha.getResponse();
+
+                if (!response) {
+                    alert("Please complete the reCAPTCHA challenge.");
+                    $(".preloader-overlay").hide();
+                    return;
+                }
+
                 var formData = $(this).serializeArray();
                 formData.push({ name: 'csrfmiddlewaretoken', value: $('input[name=csrfmiddlewaretoken]').val() });
 
@@ -739,6 +751,7 @@
                     $(".preloader-overlay").hide();
                         $('#successModal').modal('show');
                         $("#bookAnEncounterForm")[0].reset();
+                        grecaptcha.reset()
                     },
                     error: function (xhr) {
                         $(".preloader-overlay").hide();
@@ -749,6 +762,7 @@
                             $(".error-modal-body").html("Oops! An error occured, request wasn't sent. Please try again.");
                         }
                         $('#errorModal').modal('show');
+                        grecaptcha.reset()
                     }
                 });
             });
@@ -761,6 +775,12 @@
                 e.preventDefault();
                 $(".preloader-overlay").show();
 
+                if (!response) {
+                    alert("Please complete the reCAPTCHA challenge.");
+                    $(".preloader-overlay").hide();
+                    return;
+                }
+
                 var formData = $(this).serializeArray();
                 formData.push({ name: 'csrfmiddlewaretoken', value: $('input[name=csrfmiddlewaretoken]').val() });
 
@@ -772,6 +792,7 @@
                     $(".preloader-overlay").hide();
                         $('#successModal').modal('show');
                         $("#bookAnEncounterForm")[0].reset();
+                        grecaptcha.reset()
                     },
                     error: function (xhr) {
                         $(".preloader-overlay").hide();
@@ -782,6 +803,7 @@
                             $(".error-modal-body").html("Oops! An error occured, request wasn't sent. Please try again.");
                         }
                         $('#errorModal').modal('show');
+                        grecaptcha.reset()
                     }
                 });
             });

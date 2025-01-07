@@ -6,8 +6,10 @@ from django.template.loader import render_to_string
 from .models import AnimalResident, DragonShelterProfile, BookAnEncounterRequest, DragonShelterEvent, PaddyPony
 import os
 from django.conf import settings
+from django_recaptcha.fields import ReCaptchaField
 
-# Create your models here.
+
+
 def index(request):
     animal_residents = AnimalResident.objects.all().order_by('-id')[:3][::-1]
     dragon_shelter = get_object_or_404(DragonShelterProfile, pk=1)
@@ -26,6 +28,18 @@ def book_an_encounter(request):
         phone_number = request.POST.get('phone_number')
         event_description = request.POST.get('event_description')
         preferred_date_of_event = request.POST.get('preferred_date_of_event')
+        captcha_response = request.POST.get('g-recaptcha-response')
+
+        # Validate the reCAPTCHA response
+        recaptcha = ReCaptchaField()
+        recaptcha.public_key = settings.RECAPTCHA_PUBLIC_KEY
+        recaptcha.private_key = settings.RECAPTCHA_PRIVATE_KEY
+        if not recaptcha.clean(captcha_response):
+            error = {
+                "error": True,
+                "message": "Invalid reCAPTCHA. Please try again."
+            }
+            return JsonResponse(error, status=400)
 
         event_exists = DragonShelterEvent.objects.filter(event_date=preferred_date_of_event).exists()
 
@@ -75,6 +89,18 @@ def book_an_encounter_paddy_pony(request):
         phone_number = request.POST.get('phone_number')
         event_description = request.POST.get('event_description')
         preferred_date_of_event = request.POST.get('preferred_date_of_event')
+        captcha_response = request.POST.get('g-recaptcha-response')
+
+        # Validate the reCAPTCHA response
+        recaptcha = ReCaptchaField()
+        recaptcha.public_key = settings.RECAPTCHA_PUBLIC_KEY
+        recaptcha.private_key = settings.RECAPTCHA_PRIVATE_KEY
+        if not recaptcha.clean(captcha_response):
+            error = {
+                "error": True,
+                "message": "Invalid reCAPTCHA. Please try again."
+            }
+            return JsonResponse(error, status=400)
 
         event_exists = DragonShelterEvent.objects.filter(event_date=preferred_date_of_event).exists()
 

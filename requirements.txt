@@ -4,6 +4,7 @@ django-admin-interface==0.28.8
 django-ckeditor==6.7.1
 django-colorfield==0.11.0
 django-js-asset==2.2.0
+django-recaptcha==4.0.0
 gunicorn==23.0.0
 packaging==24.1
 pillow==10.4.0
